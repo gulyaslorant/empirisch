@@ -1,0 +1,11 @@
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+
+.custom-outline .mat-form-field-appearance-outline .mat-form-field-outline {
+    .mat-form-field-outline-start,
+    .mat-form-field-outline-end,
+    .mat-form-field-outline-gap {
+        border-color: black !important; /* Farbe der Umrandung */
+        border-width: 2px !important; /* Dicke der Umrandung */
+        background-color: red;
+    }
+}
