@@ -1,6 +1,19 @@
-<div>
-    <mat-form-field appearance="outline">
-        <mat-label>Bitte Namen angeben</mat-label>
-        <input matInput placeholder="Name" class="custom-outline" />
+<div class="container rand">
+  <div class="form-section">
+    <mat-form-field appearance="fill">
+      <mat-label>Bitte Text eintragen</mat-label>
+      <input matInput placeholder="Text hier" [formControl]="inputControl">
     </mat-form-field>
+    <button mat-raised-button color="primary" (click)="updateCard()">Übermitteln</button>
+  </div>
+
+  <div class="card-section">
+    <mat-card>
+      <mat-card-title>Eingetragener Text</mat-card-title>
+      <mat-card-content>
+        {{ cardText }}
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
+
