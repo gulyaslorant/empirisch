@@ -4,7 +4,12 @@
       <mat-label>Bitte Text eintragen</mat-label>
       <input matInput placeholder="Text hier" [formControl]="inputControl">
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="updateCard()">Übermitteln</button>
+    <button mat-raised-button color="primary" (click)="updateCard()" 
+            matTooltip="Der oben eingetragene Text erscheint unten"
+            aria-label="Button, der den Text aus dem Eingabefeld in der Card anzeigt.">
+      Übermitteln
+
+    </button>
   </div>
 
   <div class="card-section">

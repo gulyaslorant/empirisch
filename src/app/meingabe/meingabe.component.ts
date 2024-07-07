@@ -4,6 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatTooltipModule,
   ],
   templateUrl: './meingabe.component.html',
   styleUrl: './meingabe.component.scss',
