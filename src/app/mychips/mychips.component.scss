@@ -1,0 +1,23 @@
+/* mychips.component.scss */
+mat-chip {
+  &:hover {
+    background-color: red;
+    color: white;  // Optional: Ändert die Textfarbe auf weiß, um den Kontrast zu verbessern
+  }
+
+  &.selected {
+    background-color: rgba(0, 150, 136, 0.5);
+    color: white;
+  }
+
+  &:not(.selected) {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: black;
+  }
+}
+.ripple-container {
+  display: inline-block;
+  position: justify;
+  cursor: pointer;
+  padding: 8px;
+}

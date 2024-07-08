@@ -1,14 +1,14 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { MeingabeComponent } from "./meingabe/meingabe.component";
+import { GridGitterComponent } from './gridgitter/gridgitter.component';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, MeingabeComponent],
-  templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
+  imports: [RouterOutlet, GridGitterComponent],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = "Der Empirische Teil";
+  title = 'Der Empirische Teil';
 }
