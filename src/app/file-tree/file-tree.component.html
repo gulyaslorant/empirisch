@@ -1,0 +1,22 @@
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl" role="tree">
+  <!-- Ordner-Knoten -->
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding [class.example-tree-node-folder]="node.type === 'folder'" role="treeitem" [attr.aria-expanded]="treeControl.isExpanded(node)">
+    <button mat-icon-button matTreeNodeToggle [attr.aria-label]="'Toggle ' + node.name">
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    <mat-icon class="mat-icon-rtl-mirror">folder</mat-icon>
+    <span [attr.id]="node.name + '-label'">{{node.name}}</span>
+    <div role="group" *ngIf="treeControl.isExpanded(node)">
+      <!-- Child nodes will be rendered here -->
+    </div>
+  </mat-tree-node>
+
+  <!-- Datei-Knoten -->
+  <mat-tree-node *matTreeNodeDef="let node; when: isFile" matTreeNodePadding [class.example-tree-node-file]="node.type === 'file'" role="treeitem" [attr.aria-labelledby]="node.name + '-label'">
+    <button mat-icon-button disabled></button>
+    <mat-icon class="mat-icon-rtl-mirror">insert_drive_file</mat-icon>
+    <span [attr.id]="node.name + '-label'">{{node.name}}</span>
+  </mat-tree-node>
+</mat-tree>

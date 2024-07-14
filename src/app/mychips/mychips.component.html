@@ -2,7 +2,7 @@
 <div matRipple matRippleColor="cyan" class="ripple-container" role="button" tabindex="0" aria-label="Das ist eine Auswahl">
   <p>Das ist eine Auswahl</p>
 </div>
-<div><mat-chip-set aria-label="Auswahl der Förderungen">
+<div><mat-chip-set aria-label="Auswahl der Förderungen" role="listbox">
   <mat-chip *ngFor="let chip of chips"
             [removable]="true"
             [class.selected]="chip.selected"
