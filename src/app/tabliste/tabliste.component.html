@@ -1,0 +1,29 @@
+<mat-tab-group aria-label="Beispiel Tab Gruppe" (selectedIndexChange)="onTabChange($event)">
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span id="gridliste-tab" role="tab">Gridliste</span>
+    </ng-template>
+    <div id="gridliste-panel" role="tabpanel" aria-labelledby="gridliste-tab">
+      <app-gridgitter></app-gridgitter>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span id="dateistruktur-tab" role="tab">Angular Dateistruktur</span>
+    </ng-template>
+    <div id="dateistruktur-panel" role="tabpanel" aria-labelledby="dateistruktur-tab">
+      <app-file-tree></app-file-tree>
+    </div>
+  </mat-tab>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <span id="tab3-tab" role="tab">Tab 3</span>
+    </ng-template>
+    <div id="tab3-panel" role="tabpanel" aria-labelledby="tab3-tab">
+      <p>Content 3</p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
+
+<!-- Material Progress Bar -->
+<mat-progress-bar mode="determinate" [value]="progressValue" aria-label="Visuelle Unterstützung zur Bestimmung des aktiven Tabs"></mat-progress-bar>
