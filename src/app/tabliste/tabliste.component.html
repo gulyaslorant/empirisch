@@ -1,20 +1,28 @@
 <mat-tab-group aria-label="Beispiel Tab Gruppe" (selectedIndexChange)="onTabChange($event)">
-  <mat-tab label="Gridliste">
-    <div id="gridliste-panel">
-      <app-gridgitter></app-gridgitter>
-    </div>
-  </mat-tab>
-  <mat-tab label="Angular Dateistruktur">
-    <div id="dateistruktur-panel">
-      <app-file-tree></app-file-tree>
-    </div>
-  </mat-tab>
-  <mat-tab label="Tab 3">
-    <div id="tab3-panel">
-      <p>Content 3</p>
-    </div>
-  </mat-tab>
+  <ng-container *ngFor="let tab of asyncTabs | async">
+    <mat-tab [label]="tab.label">
+      <ng-template matTabContent>
+        <div *ngIf="tab.label === 'Gridliste'">
+          <app-gridgitter></app-gridgitter>
+        </div>
+        <div *ngIf="tab.label === 'Angular Dateistruktur'">
+          <app-file-tree></app-file-tree>
+        </div>
+        <div *ngIf="tab.label === 'Tab 3'">
+          {{ tab.content }}
+        </div>
+      </ng-template>
+    </mat-tab>
+  </ng-container>
 </mat-tab-group>
 
 <!-- Material Progress Bar -->
-<mat-progress-bar mode="determinate" [value]="progressValue" aria-label="Visuelle Unterstützung zur Bestimmung des aktiven Tabs"></mat-progress-bar>
+<mat-progress-bar 
+  mode="determinate" 
+  [value]="progressValue" 
+  role="meter" 
+  [attr.aria-valuemin]="0" 
+  [attr.aria-valuemax]="100" 
+  [attr.aria-valuenow]="progressValue" 
+  [attr.aria-label]="'Fortschritt: ' + progressValue + '%'">
+</mat-progress-bar>
