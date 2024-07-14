@@ -9,7 +9,7 @@
                    [attr.aria-rowspan]="tile.rows"
                    class="mat-grid-tile">
 
-      <ng-container *ngIf="tile.text">{{ tile.text }}</ng-container>
+      <ng-container *ngIf="tile.text"><div role="text">{{ tile.text }}</div></ng-container>
       <ng-container *ngIf="tile.component">
         <ng-container *ngComponentOutlet="tile.component"></ng-container>
       </ng-container>
