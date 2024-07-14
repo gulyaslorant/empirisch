@@ -1,4 +1,5 @@
-<mat-tab-group aria-label="Beispiel Tab Gruppe" (selectedIndexChange)="onTabChange($event)">
+<div role="tablist" aria-label="Beispiel Tab Gruppe">
+<mat-tab-group (selectedIndexChange)="onTabChange($event)">
   <mat-tab>
     <ng-template mat-tab-label>
       <span id="gridliste-tab" role="tab">Gridliste</span>
@@ -24,6 +25,6 @@
     </div>
   </mat-tab>
 </mat-tab-group>
-
+</div>
 <!-- Material Progress Bar -->
 <mat-progress-bar mode="determinate" [value]="progressValue" aria-label="Visuelle Unterstützung zur Bestimmung des aktiven Tabs"></mat-progress-bar>
