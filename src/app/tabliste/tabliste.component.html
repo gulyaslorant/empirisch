@@ -1,25 +1,16 @@
-<mat-tab-group aria-label="Beispiel Tab Gruppe" role="tablist" (selectedIndexChange)="onTabChange($event)">
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <span id="gridliste-tab" role="tab" aria-controls="gridliste-panel">Gridliste</span>
-    </ng-template>
-    <div id="gridliste-panel" role="tabpanel" aria-labelledby="gridliste-tab">
+<mat-tab-group aria-label="Beispiel Tab Gruppe" (selectedIndexChange)="onTabChange($event)">
+  <mat-tab label="Gridliste">
+    <div id="gridliste-panel">
       <app-gridgitter></app-gridgitter>
     </div>
   </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <span id="dateistruktur-tab" role="tab" aria-controls="dateistruktur-panel">Angular Dateistruktur</span>
-    </ng-template>
-    <div id="dateistruktur-panel" role="tabpanel" aria-labelledby="dateistruktur-tab">
+  <mat-tab label="Angular Dateistruktur">
+    <div id="dateistruktur-panel">
       <app-file-tree></app-file-tree>
     </div>
   </mat-tab>
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <span id="tab3-tab" role="tab" aria-controls="tab3-panel">Tab 3</span>
-    </ng-template>
-    <div id="tab3-panel" role="tabpanel" aria-labelledby="tab3-tab">
+  <mat-tab label="Tab 3">
+    <div id="tab3-panel">
       <p>Content 3</p>
     </div>
   </mat-tab>
