@@ -1,12 +1,15 @@
 <!-- mychips.component.html -->
-<div matRipple matRippleColor="cyan" class="ripple-container">
+<div matRipple matRippleColor="cyan" class="ripple-container" role="button" tabindex="0" aria-label="Das ist eine Auswahl">
   <p>Das ist eine Auswahl</p>
 </div>
 <div><mat-chip-set aria-label="Auswahl der Förderungen">
   <mat-chip *ngFor="let chip of chips"
             [removable]="true"
             [class.selected]="chip.selected"
-            (click)="toggleSelection(chip)">
+            (click)="toggleSelection(chip)"
+            tabindex="0"
+            role="option"
+            [attr.aria-selected]="chip.selected">
     {{ chip.name }}
   </mat-chip>
 </mat-chip-set>
