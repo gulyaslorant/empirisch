@@ -1,8 +1,12 @@
 <!-- gridgitter.component.html -->
-<mat-grid-list cols="5" rowHeight="100px" class="grid">
+<mat-grid-list cols="5" rowHeight="100px" class="grid" role="grid">
   <mat-grid-tile *ngFor="let tile of tiles"
                  [colspan]="tile.cols"
-                 [rowspan]="tile.rows">
+                 [rowspan]="tile.rows"
+                 role="gridcell"
+                 [attr.aria-colspan]="tile.cols"
+                 [attr.aria-rowspan]="tile.rows"
+                 >
     <ng-container *ngIf="tile.text">{{ tile.text }}</ng-container>
     <ng-container *ngIf="tile.component">
       <ng-container *ngComponentOutlet="tile.component"></ng-container>

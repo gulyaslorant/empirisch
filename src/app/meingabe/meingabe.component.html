@@ -1,10 +1,10 @@
 <div class="container rand">
   <div class="form-section">
     <mat-form-field appearance="fill">
-      <mat-label>Bitte Text eintragen</mat-label>
-      <input matInput placeholder="Text hier" [formControl]="inputControl">
+      <mat-label id="input-label">Bitte Text eintragen</mat-label>
+      <input matInput placeholder="Text hier" [formControl]="inputControl" aria-labelledby="input-label">
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="updateCard()" 
+    <button id="submit-button" mat-raised-button color="primary" (click)="updateCard()" 
             matTooltip="Der oben eingetragene Text erscheint unten"
             aria-label="Button, der den Text aus dem Eingabefeld in der Card anzeigt."
             aria role="button" >
@@ -13,7 +13,7 @@
     </button>
   </div>
 
-  <div class="card-section">
+  <div class="card-section" id="text-display" aria-live="polite" aria-atomic="true">
     <mat-card>
       <mat-card-header>Das ist der Header Bereich</mat-card-header>
       <mat-card-title>Eingetragener Text</mat-card-title>
