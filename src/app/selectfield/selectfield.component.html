@@ -1,0 +1,22 @@
+<mat-form-field appearance="fill">
+    <mat-label>Select an option</mat-label>
+    <mat-select
+        (selectionChange)="onSelectionChange($event)"
+        aria-label="Select an option"
+        role="combobox"
+        aria-haspopup="listbox"
+        [attr.aria-expanded]="selectedOption ? 'true' : 'false'"
+        aria-controls="option-list"
+    >
+        <mat-option *ngFor="let option of options" [value]="option.value">
+            {{ option.viewValue }}
+        </mat-option>
+    </mat-select>
+</mat-form-field>
+
+<p>Selected Option: {{ selectedOption }}</p>
+<!-- Debugging Ausgabe -->
+
+<ng-container *ngIf="selectedOption === 'tabliste'" class="container">
+    <app-tabliste></app-tabliste>
+</ng-container>
