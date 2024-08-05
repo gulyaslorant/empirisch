@@ -1,0 +1,50 @@
+<table
+    mat-table
+    [dataSource]="dataSource"
+    class="mat-elevation-z8"
+    role="table"
+    aria-label="Periodic Elements Table"
+>
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef scope="col" aria-label="Position">
+            No.
+        </th>
+        <td mat-cell *matCellDef="let element" role="cell">
+            {{ element.position }}
+        </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef scope="col" aria-label="Name">
+            Name
+        </th>
+        <td mat-cell *matCellDef="let element" role="cell">
+            {{ element.name }}
+        </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef scope="col" aria-label="Weight">
+            Weight
+        </th>
+        <td mat-cell *matCellDef="let element" role="cell">
+            {{ element.weight }}
+        </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef scope="col" aria-label="Symbol">
+            Symbol
+        </th>
+        <td mat-cell *matCellDef="let element" role="cell">
+            {{ element.symbol }}
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" role="row"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" role="row"></tr>
+</table>

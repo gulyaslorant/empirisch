@@ -3,6 +3,7 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { CommonModule } from "@angular/common";
 import { TablisteComponent } from "../tabliste/tabliste.component";
+import { TablefeldComponent } from "../tablefeld/tablefeld.component";
 
 @Component({
   selector: "app-selectfield",
@@ -14,16 +15,17 @@ import { TablisteComponent } from "../tabliste/tabliste.component";
     MatSelectModule,
     MatFormFieldModule,
     TablisteComponent,
+    TablefeldComponent,
   ],
 })
 export class SelectfieldComponent {
   options = [
     { value: "tabliste", viewValue: "Tabliste" },
-    { value: "option2", viewValue: "Option 2" },
+    { value: "tablefeld", viewValue: "Tablefeld" },
     { value: "option3", viewValue: "Option 3" },
   ];
 
-  selectedOption: string = "";
+  selectedOption: string = "tabliste";
 
   onSelectionChange(event: any) {
     this.selectedOption = event.value;

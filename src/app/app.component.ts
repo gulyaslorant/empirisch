@@ -1,12 +1,18 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { TablisteComponent } from "./tabliste/tabliste.component";
 import { SelectfieldComponent } from "./selectfield/selectfield.component";
+import { MenupunktComponent } from "./menupunkt/menupunkt.component";
+import { SeitenleisteComponent } from "./seitenleiste/seitenleiste.component";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [RouterOutlet, SelectfieldComponent],
+  imports: [
+    RouterOutlet,
+    SelectfieldComponent,
+    MenupunktComponent,
+    SeitenleisteComponent,
+  ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
 })

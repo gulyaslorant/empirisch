@@ -14,9 +14,12 @@
     </mat-select>
 </mat-form-field>
 
-<p>Selected Option: {{ selectedOption }}</p>
 <!-- Debugging Ausgabe -->
 
 <ng-container *ngIf="selectedOption === 'tabliste'" class="container">
     <app-tabliste></app-tabliste>
+</ng-container>
+
+<ng-container *ngIf="selectedOption === 'tablefeld'" class="container">
+    <app-tablefeld></app-tablefeld>
 </ng-container>
