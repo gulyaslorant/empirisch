@@ -12,7 +12,15 @@
                     <app-file-tree></app-file-tree>
                 </div>
                 <div *ngIf="tab.label === 'Tab 3'">
-                    {{ tab.content }}
+                    <div class="image">
+                        <img
+                            src="assets/Untergang.jpg"
+                            alt="Sonnenuntergang von der Basteibrücke"
+                            width="300"
+                            height="450"
+                            class="img"
+                        />
+                    </div>
                 </div>
             </ng-template>
         </mat-tab>
