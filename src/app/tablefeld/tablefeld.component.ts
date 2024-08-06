@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { MatTableModule } from "@angular/material/table";
-
+import { DatepickerComponent } from "../datepicker/datepicker.component";
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -26,7 +26,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ["./tablefeld.component.scss"],
   templateUrl: "./tablefeld.component.html",
   standalone: true,
-  imports: [MatTableModule],
+  imports: [MatTableModule, DatepickerComponent],
 })
 export class TablefeldComponent {
   displayedColumns: string[] = ["position", "name", "weight", "symbol"];

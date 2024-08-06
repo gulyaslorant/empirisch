@@ -5,3 +5,16 @@ table {
 .mat-elevation-z8 {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
+
+.multidaten {
+    display: flex;
+    width: 100%;
+    justify-items: center;
+}
+
+.box {
+    flex: 1; /* Alle Boxen nehmen den gleichen Platz ein */
+    padding: 10px;
+    border: 1px solid black;
+    margin: 5px;
+}
