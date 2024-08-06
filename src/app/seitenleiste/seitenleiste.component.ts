@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
 import { MatButtonModule } from "@angular/material/button";
 import { MatSidenavModule } from "@angular/material/sidenav";
 
@@ -10,7 +11,7 @@ import { MatSidenavModule } from "@angular/material/sidenav";
   templateUrl: "seitenleiste.component.html",
   styleUrl: "seitenleiste.component.scss",
   standalone: true,
-  imports: [MatSidenavModule, MatButtonModule],
+  imports: [CommonModule, MatSidenavModule, MatButtonModule],
 })
 export class SeitenleisteComponent {
   showFiller = false;

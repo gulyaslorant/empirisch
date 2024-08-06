@@ -12,15 +12,20 @@
                     <app-file-tree></app-file-tree>
                 </div>
                 <div *ngIf="tab.label === 'Tab 3'">
-                    <div class="image">
-                        <img
-                            src="assets/Untergang.jpg"
-                            aria-label="Ein atemberaubender Sonnenuntergang, gesehen von der Basteibrücke."
-                            alt="Ein atemberaubender Sonnenuntergang, gesehen von der Basteibrücke."
-                            width="300"
-                            height="450"
-                            class="img"
-                        />
+                    <div class="multidaten">
+                        <div class="image">
+                            <img
+                                src="assets/Untergang.jpg"
+                                aria-label="Ein atemberaubender Sonnenuntergang, gesehen von der Basteibrücke."
+                                alt="Ein atemberaubender Sonnenuntergang, gesehen von der Basteibrücke."
+                                width="300"
+                                height="450"
+                                class="box"
+                            />
+                        </div>
+                        <div class="box">
+                            <app-textfeld></app-textfeld>
+                        </div>
                     </div>
                 </div>
             </ng-template>

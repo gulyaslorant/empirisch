@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { GridGitterComponent } from '../gridgitter/gridgitter.component';
-import { FileTreeComponent } from '../file-tree/file-tree.component';
-import { Observable, Observer } from 'rxjs';
+import { Component } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { GridGitterComponent } from "../gridgitter/gridgitter.component";
+import { FileTreeComponent } from "../file-tree/file-tree.component";
+import { TextfeldComponent } from "../textfeld/textfeld.component";
+import { Observable, Observer } from "rxjs";
 
 interface ExampleTab {
   label: string;
@@ -12,7 +13,7 @@ interface ExampleTab {
 }
 
 @Component({
-  selector: 'app-tabliste',
+  selector: "app-tabliste",
   standalone: true,
   imports: [
     CommonModule,
@@ -20,9 +21,10 @@ interface ExampleTab {
     GridGitterComponent,
     FileTreeComponent,
     MatProgressBarModule,
+    TextfeldComponent,
   ],
-  templateUrl: './tabliste.component.html',
-  styleUrls: ['./tabliste.component.scss'],
+  templateUrl: "./tabliste.component.html",
+  styleUrls: ["./tabliste.component.scss"],
 })
 export class TablisteComponent {
   progressValue = 0;
@@ -32,12 +34,12 @@ export class TablisteComponent {
     this.asyncTabs = new Observable((observer: Observer<ExampleTab[]>) => {
       setTimeout(() => {
         observer.next([
-          { label: 'Gridliste', content: 'Gridliste Content' },
+          { label: "Gridliste", content: "Gridliste Content" },
           {
-            label: 'Angular Dateistruktur',
-            content: 'Angular Dateistruktur Content',
+            label: "Angular Dateistruktur",
+            content: "Angular Dateistruktur Content",
           },
-          { label: 'Tab 3', content: 'Tab 3 Content' },
+          { label: "Tab 3", content: "Tab 3 Content" },
         ]);
       }, 1000);
     });
