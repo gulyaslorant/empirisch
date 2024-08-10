@@ -4,7 +4,9 @@ import { MatListModule } from "@angular/material/list";
 import { MatPaginatorModule, PageEvent } from "@angular/material/paginator";
 import { MatDividerModule } from "@angular/material/divider";
 import { MatDialog, MatDialogModule } from "@angular/material/dialog";
-import { VisitDialogComponent } from "../visit-dialog/visit-dialog.component"; // Importiere die Dialog-Komponente
+import { MatBottomSheet } from "@angular/material/bottom-sheet";
+import { VisitDialogComponent } from "../visit-dialog/visit-dialog.component";
+import { UntenfensterComponent } from "../untenfenster/untenfenster.component";
 
 @Component({
   selector: "app-textfeld",
@@ -15,7 +17,7 @@ import { VisitDialogComponent } from "../visit-dialog/visit-dialog.component"; /
     MatPaginatorModule,
     MatDividerModule,
     MatDialogModule,
-    VisitDialogComponent,
+    VisitDialogComponent, // Importiere die VisitDialogComponent
   ],
   templateUrl: "./textfeld.component.html",
   styleUrls: ["./textfeld.component.scss"],
@@ -39,7 +41,14 @@ export class TextfeldComponent {
 
   pagedItems = this.items.slice(0, 5);
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private bottomSheet: MatBottomSheet,
+  ) {}
+
+  openBottomSheet(): void {
+    this.bottomSheet.open(UntenfensterComponent);
+  }
 
   onPageChange(event: PageEvent) {
     const startIndex = event.pageIndex * event.pageSize;
