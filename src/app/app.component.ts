@@ -3,7 +3,7 @@ import { RouterOutlet } from "@angular/router";
 import { SelectfieldComponent } from "./selectfield/selectfield.component";
 import { MenupunktComponent } from "./menupunkt/menupunkt.component";
 import { SeitenleisteComponent } from "./seitenleiste/seitenleiste.component";
-
+import { SnackbarComponent } from "./snackbar/snackbar.component";
 @Component({
   selector: "app-root",
   standalone: true,
@@ -12,10 +12,13 @@ import { SeitenleisteComponent } from "./seitenleiste/seitenleiste.component";
     MenupunktComponent,
     SeitenleisteComponent,
     SelectfieldComponent,
+    SnackbarComponent,
   ],
   templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent {
   title = "Der Empirische Teil";
+
+  ngOnInit() {}
 }

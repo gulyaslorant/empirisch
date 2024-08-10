@@ -25,7 +25,7 @@ export class SelectfieldComponent {
     { value: "option3", viewValue: "Option 3" },
   ];
 
-  selectedOption: string = "tabliste";
+  selectedOption: string = "";
 
   onSelectionChange(event: any) {
     this.selectedOption = event.value;

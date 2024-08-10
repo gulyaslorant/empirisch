@@ -8,5 +8,25 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.custom-snackbar {
+    background: linear-gradient(45deg, #ff6f00, #ff8f00, #ffca28);
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.custom-snackbar button {
+    color: #fff;
+}
