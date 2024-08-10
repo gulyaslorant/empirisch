@@ -2,13 +2,7 @@
 <main class="layout">
     <!-- Seitenleiste -->
     <aside>
-        <!-- Dynamisches Laden des Menupunkts -->
-        <ng-container *ngIf="loadMenupunkt | async as MenupunktComponent">
-            <ng-container
-                *ngComponentOutlet="MenupunktComponent"
-            ></ng-container>
-        </ng-container>
-        <!-- Dynamisches Laden der Seitenleiste -->
+         <!-- Dynamisches Laden der Seitenleiste -->
         <ng-container *ngIf="loadSeitenleiste | async as SeitenleisteComponent">
             <ng-container
                 *ngComponentOutlet="SeitenleisteComponent"
