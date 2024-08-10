@@ -1,29 +1,56 @@
-<mat-form-field appearance="fill">
-    <mat-label>Select an option</mat-label>
-    <mat-select
-        (selectionChange)="onSelectionChange($event)"
-        aria-label="Select an option"
-        role="combobox"
-        aria-haspopup="listbox"
-        [attr.aria-expanded]="selectedOption ? 'true' : 'false'"
-        aria-controls="option-list"
-    >
-        <mat-option *ngFor="let option of options" [value]="option.value">
-            {{ option.viewValue }}
-        </mat-option>
-    </mat-select>
-</mat-form-field>
+<!-- Hauptlayout -->
+<main class="layout">
+    <!-- Seitenleiste -->
+    <aside>
+        <!-- Dynamisches Laden des Menupunkts -->
+        <ng-container *ngIf="loadMenupunkt | async as MenupunktComponent">
+            <ng-container
+                *ngComponentOutlet="MenupunktComponent"
+            ></ng-container>
+        </ng-container>
+        <!-- Dynamisches Laden der Seitenleiste -->
+        <ng-container *ngIf="loadSeitenleiste | async as SeitenleisteComponent">
+            <ng-container
+                *ngComponentOutlet="SeitenleisteComponent"
+            ></ng-container>
+        </ng-container>
+    </aside>
 
-<!-- Debugging Ausgabe -->
+    <!-- Hauptinhalt -->
+    <section class="content">
+        <h1>Das ist der empirische Teil der Bachelorarbeit!</h1>
 
-<ng-container *ngIf="selectedOption === 'tabliste'" class="container">
-    <app-tabliste></app-tabliste>
-</ng-container>
+        <!-- Auswahlfeld mit Optionen -->
+        <mat-form-field appearance="fill">
+            <mat-label>Select an option</mat-label>
+            <mat-select
+                (selectionChange)="onSelectionChange($event)"
+                aria-label="Select an option"
+                role="combobox"
+                aria-haspopup="listbox"
+                [attr.aria-expanded]="selectedOption ? 'true' : 'false'"
+                aria-controls="option-list"
+            >
+                <mat-option
+                    *ngFor="let option of options"
+                    [value]="option.value"
+                >
+                    {{ option.viewValue }}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
 
-<ng-container *ngIf="selectedOption === 'tablefeld'" class="container">
-    <app-tablefeld></app-tablefeld>
-</ng-container>
+        <!-- Dynamisches Laden von Komponenten basierend auf der Auswahl -->
+        <ng-container *ngIf="selectedOption === 'tabliste'" class="container">
+            <app-tabliste></app-tabliste>
+        </ng-container>
 
-<ng-container *ngIf="selectedOption === 'stepper'" class="container">
-    <app-stepper></app-stepper>
-</ng-container>
+        <ng-container *ngIf="selectedOption === 'tablefeld'" class="container">
+            <app-tablefeld></app-tablefeld>
+        </ng-container>
+
+        <ng-container *ngIf="selectedOption === 'stepper'" class="container">
+            <app-stepper></app-stepper>
+        </ng-container>
+    </section>
+</main>

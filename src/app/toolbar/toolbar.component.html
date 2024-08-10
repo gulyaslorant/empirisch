@@ -5,15 +5,27 @@
     >
         <span>Empirische Untersuchung zur Material Library</span>
         <span class="spacer"></span>
-        <button mat-button aria-label="Startseite" routerLink="/">Home</button>
-        <button mat-button aria-label="Tabellenansicht" routerLink="/table">
-            Table
+        <button mat-button aria-label="Startseite" (click)="setView('home')">
+            Home
         </button>
-        <button mat-button aria-label="Listenansicht" routerLink="/liste">
-            Liste
-        </button>
-        <button mat-button aria-label="Expansion" routerLink="/expansion">
+        <button
+            mat-button
+            aria-label="Expansion"
+            (click)="setView('expansion')"
+        >
             Expansion
         </button>
     </mat-toolbar>
 </nav>
+
+<!-- Container für Home-Komponente -->
+<div *ngIf="currentView === 'home'">
+    <!-- Fügen Sie hier die Home-Komponente direkt ein -->
+    <app-selectfield *ngIf="currentView === 'home'"></app-selectfield>
+</div>
+
+<!-- Container für Expansion-Komponente -->
+<div *ngIf="currentView === 'expansion'">
+    <!-- Fügen Sie hier die Expansion-Komponente direkt ein -->
+    <app-expansion *ngIf="currentView === 'expansion'"></app-expansion>
+</div>

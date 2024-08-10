@@ -1,3 +1,36 @@
-mat-form-field {
-    width: 100%;
+/* CSS für das Hauptlayout */
+.layout {
+    display: flex;
+    flex-direction: row;
+    height: 100vh; /* Höhe auf die volle Bildschirmhöhe setzen */
+}
+
+/* CSS für die Seitenleiste */
+aside {
+    flex: 0 1 250px; /* Ermöglicht eine flexible Breite mit einem anfänglichen Basiswert von 250px */
+    background-color: #f4f4f4; /* Hintergrundfarbe für die Seitenleiste */
+    padding: 15px; /* Innenabstand für die Seitenleiste */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Leichter Schatten für die Seitenleiste */
+    max-width: 30%; /* Optional: maximale Breite der Seitenleiste, z.B. 30% des Bildschirms */
+}
+
+/* CSS für den Hauptinhalt */
+.content {
+    flex: 1; /* Nimmt den verbleibenden Platz ein */
+    padding: 20px;
+    overflow-y: auto; /* Scrollen im Hauptinhalt, falls der Inhalt größer ist als der verfügbare Platz */
+}
+
+/* Weitere Anpassungen für spezifische Inhalte */
+h1 {
+    margin-top: 0;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.image {
+    height: 200px; /* Beispielgröße für das Bild */
+    background-color: #ddd; /* Platzhalter-Hintergrundfarbe für das Bild */
 }

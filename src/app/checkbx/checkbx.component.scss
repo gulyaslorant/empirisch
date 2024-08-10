@@ -1,0 +1,11 @@
+.example-container {
+    display: flex;
+    flex-direction: column; /* Elemente vertikal anordnen */
+    gap: 20px; /* Abstand zwischen den Elementen */
+    padding: 20px;
+    max-width: 300px;
+
+    mat-slider {
+        width: 100%;
+    }
+}

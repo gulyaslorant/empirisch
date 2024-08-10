@@ -1,0 +1,42 @@
+<div class="example-container">
+    <!-- Checkbox -->
+    <mat-checkbox [(ngModel)]="checked" aria-label="Option aktivieren">
+        Option aktivieren
+    </mat-checkbox>
+
+    <!-- Slider -->
+    <label for="slider" class="sr-only">Regeln Sie den Wert</label>
+    <mat-slider
+        id="slider"
+        [(ngModel)]="sliderValue"
+        min="0"
+        max="100"
+        step="1"
+        thumbLabel
+        tickInterval="5"
+        [attr.aria-valuemin]="0"
+        [attr.aria-valuemax]="100"
+        [attr.aria-valuenow]="sliderValue"
+        aria-labelledby="slider-label"
+    >
+    </mat-slider>
+    <p id="slider-label">Aktueller Wert: {{ sliderValue }}</p>
+
+    <!-- Button Toggle -->
+    <label id="toggle-label" class="sr-only">Position auswählen</label>
+    <mat-button-toggle-group
+        [(ngModel)]="toggleValue"
+        aria-labelledby="toggle-label"
+    >
+        <mat-button-toggle value="left" aria-label="Links">
+            Links
+        </mat-button-toggle>
+        <mat-button-toggle value="center" aria-label="Mitte">
+            Mitte
+        </mat-button-toggle>
+        <mat-button-toggle value="right" aria-label="Rechts">
+            Rechts
+        </mat-button-toggle>
+    </mat-button-toggle-group>
+    <p>Ausgewählte Position: {{ toggleValue }}</p>
+</div>

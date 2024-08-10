@@ -1,32 +1,8 @@
 <div class="menupunkt-container">
-    <ng-container *ngIf="loadMenupunkt | async as MenupunktComponent">
-        <ng-container *ngComponentOutlet="MenupunktComponent"></ng-container>
+    <ng-container *ngIf="loadToolbar | async as ToolbarComponent">
+        <ng-container *ngComponentOutlet="ToolbarComponent"></ng-container>
     </ng-container>
 </div>
-
-<main class="layout">
-    <aside>
-        <ng-container *ngIf="loadSeitenleiste | async as SeitenleisteComponent">
-            <ng-container
-                *ngComponentOutlet="SeitenleisteComponent"
-            ></ng-container>
-        </ng-container>
-    </aside>
-
-    <section class="content">
-        <h1>Das ist der empirische Teil der Bachelorarbeit!</h1>
-        <div
-            class="image"
-            role="img"
-            aria-label="Beschreibung des Bildes"
-        ></div>
-        <ng-container *ngIf="loadSelectfield | async as SelectfieldComponent">
-            <ng-container
-                *ngComponentOutlet="SelectfieldComponent"
-            ></ng-container>
-        </ng-container>
-    </section>
-</main>
 
 <router-outlet></router-outlet>
 

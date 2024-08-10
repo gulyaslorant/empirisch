@@ -1,30 +1,13 @@
 import { Component } from "@angular/core";
+import { MatExpansionModule } from "@angular/material/expansion";
 import { CommonModule } from "@angular/common";
-import {
-  trigger,
-  state,
-  style,
-  transition,
-  animate,
-} from "@angular/animations";
-import { MenupunktComponent } from "../menupunkt/menupunkt.component";
+import { CheckboxComponent } from "../checkbx/checkbx.component";
 
 @Component({
   selector: "app-expansion",
   standalone: true,
-  imports: [CommonModule, MenupunktComponent],
+  imports: [CommonModule, MatExpansionModule, CheckboxComponent],
   templateUrl: "./expansion.component.html",
   styleUrls: ["./expansion.component.scss"],
-  animations: [
-    trigger("transitionMessages", [
-      state("void", style({ opacity: 0 })),
-      state("*", style({ opacity: 1 })),
-      transition(":enter", [
-        style({ opacity: 0 }),
-        animate("300ms ease-in", style({ opacity: 1 })),
-      ]),
-      transition(":leave", [animate("300ms ease-out", style({ opacity: 0 }))]),
-    ]),
-  ],
 })
-export class ExpansionComponent {}
+export class ExpansionPanelComponent {}
