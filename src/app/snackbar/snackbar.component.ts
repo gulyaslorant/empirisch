@@ -1,6 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { LiveAnnouncer } from "@angular/cdk/a11y";
 
 @Component({
   selector: "app-snackbar",
@@ -11,7 +12,10 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
   changeDetection: ChangeDetectionStrategy.OnPush, // Change Detection auf OnPush setzen
 })
 export class SnackbarComponent implements OnInit {
-  constructor(private snackBar: MatSnackBar) {}
+  constructor(
+    private snackBar: MatSnackBar,
+    private liveAnnouncer: LiveAnnouncer,
+  ) {}
 
   ngOnInit() {
     this.openSnackBar();
@@ -26,7 +30,12 @@ export class SnackbarComponent implements OnInit {
         horizontalPosition: "center",
         verticalPosition: "bottom",
         panelClass: ["custom-snackbar"],
+        politeness: "assertive", // Stellt sicher, dass Screenreader die Nachricht sofort lesen
       },
+    );
+    this.liveAnnouncer.announce(
+      "Das ist ein Experiment für eine Bachelorarbeit",
+      "assertive",
     );
   }
 }
