@@ -1,0 +1,15 @@
+<h1 mat-dialog-title id="dialog-title">Städte besucht?</h1>
+<div mat-dialog-content>
+    <p>Haben Sie schon alle Städte besucht?</p>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()" aria-label="Nein">Nein</button>
+    <button
+        mat-button
+        [mat-dialog-close]="true"
+        cdkFocusInitial
+        aria-label="Ja"
+    >
+        Ja
+    </button>
+</div>
