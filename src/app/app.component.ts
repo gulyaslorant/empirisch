@@ -31,6 +31,12 @@ export class AppComponent {
   loadSnackbar: Promise<Type<any>> = import(
     "./snackbar/snackbar.component"
   ).then((m) => m.SnackbarComponent);
+  loadCheckbx: Promise<Type<any>> = import("./checkbx/checkbx.component").then(
+    (m) => m.CheckboxComponent,
+  );
+  loadExpansion: Promise<Type<any>> = import(
+    "./expansion/expansion.component"
+  ).then((m) => m.ExpansionPanelComponent);
 
   ngOnInit() {}
 }
