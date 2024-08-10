@@ -4,6 +4,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { CommonModule } from "@angular/common";
 import { TablisteComponent } from "../tabliste/tabliste.component";
 import { TablefeldComponent } from "../tablefeld/tablefeld.component";
+import { StepperComponent } from "../stepper/stepper.component";
 
 @Component({
   selector: "app-selectfield",
@@ -16,13 +17,14 @@ import { TablefeldComponent } from "../tablefeld/tablefeld.component";
     MatFormFieldModule,
     TablisteComponent,
     TablefeldComponent,
+    StepperComponent,
   ],
 })
 export class SelectfieldComponent {
   options = [
     { value: "tabliste", viewValue: "Tabliste" },
     { value: "tablefeld", viewValue: "Tablefeld" },
-    { value: "option3", viewValue: "Option 3" },
+    { value: "stepper", viewValue: "Stepper Modul" },
   ];
 
   selectedOption: string = "tablefeld";

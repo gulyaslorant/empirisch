@@ -1,0 +1,72 @@
+<mat-horizontal-stepper
+    [linear]="isLinear"
+    #stepper
+    (selectionChange)="setStep(stepper.selectedIndex)"
+>
+    <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup" aria-label="Step 1 Form">
+            <ng-template matStepLabel>Step 1</ng-template>
+            <mat-radio-group
+                formControlName="firstCtrl"
+                aria-labelledby="radio-group-1"
+            >
+                <label id="radio-group-1">Please select an option:</label>
+                <mat-radio-button value="option1">Option 1</mat-radio-button>
+                <mat-radio-button value="option2">Option 2</mat-radio-button>
+            </mat-radio-group>
+            <div>
+                <button mat-button matStepperNext aria-label="Go to Step 2">
+                    Next
+                </button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup" aria-label="Step 2 Form">
+            <ng-template matStepLabel>Step 2</ng-template>
+            <mat-slide-toggle formControlName="secondCtrl"
+                >Enable feature</mat-slide-toggle
+            >
+            <div>
+                <button
+                    mat-button
+                    matStepperPrevious
+                    aria-label="Go back to Step 1"
+                >
+                    Back
+                </button>
+                <button mat-button matStepperNext aria-label="Go to Final Step">
+                    Next
+                </button>
+            </div>
+        </form>
+    </mat-step>
+    <mat-step aria-label="Final Step">
+        <ng-template matStepLabel>Final Step</ng-template>
+        <p>Thank you for completing the steps!</p>
+        <div>
+            <button
+                mat-button
+                matStepperPrevious
+                aria-label="Go back to Step 2"
+            >
+                Back
+            </button>
+            <button
+                mat-button
+                (click)="reset(stepper)"
+                aria-label="Reset the steps"
+            >
+                Reset
+            </button>
+        </div>
+    </mat-step>
+</mat-horizontal-stepper>
+
+<div class="progress-container">
+    <mat-spinner
+        [value]="progress"
+        aria-label="Progress indicator"
+    ></mat-spinner>
+    <p>{{ progress | number: "1.0-0" }}% complete</p>
+</div>

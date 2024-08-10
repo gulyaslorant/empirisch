@@ -1,30 +1,58 @@
 <div class="container rand">
-  <div class="form-section">
-    <mat-form-field appearance="fill">
-      <mat-label id="input-label">Bitte Text eintragen</mat-label>
-      <input matInput placeholder="Text hier" [formControl]="inputControl" aria-labelledby="input-label">
-    </mat-form-field>
-    <button id="submit-button" mat-raised-button color="primary" (click)="updateCard()" 
+    <div class="form-section">
+        <mat-form-field appearance="fill">
+            <mat-label id="input-label">Bitte Text eintragen</mat-label>
+            <input
+                matInput
+                placeholder="Text hier"
+                [formControl]="inputControl"
+                aria-labelledby="input-label"
+                [matAutocomplete]="auto"
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+                <mat-option
+                    *ngFor="let option of filteredOptions | async"
+                    [value]="option"
+                >
+                    {{ option }}
+                </mat-option>
+            </mat-autocomplete>
+        </mat-form-field>
+        <button
+            id="submit-button"
+            mat-raised-button
+            color="primary"
+            (click)="updateCard()"
             matTooltip="Der oben eingetragene Text erscheint unten"
             aria-label="Übermitteln"
-            aria-describedby="submit-button-desc">
-      Übermitteln
-    </button>
-    <span id="submit-button-desc" class="visually-hidden">Übermittelt den oben eingetragenen Text und zeigt ihn unten in der Karte an.</span>
-  </div>
+            aria-describedby="submit-button-desc"
+        >
+            Übermitteln
+        </button>
+        <span id="submit-button-desc" class="visually-hidden"
+            >Übermittelt den oben eingetragenen Text und zeigt ihn unten in der
+            Karte an.</span
+        >
+    </div>
 
-  <div class="card-section" id="text-display" aria-live="polite" aria-atomic="true">
-    <mat-card>
-      <mat-card-header>Das ist der Header Bereich</mat-card-header>
-      <mat-card-title>Eingetragener Text</mat-card-title>
-      <mat-card-content>
-        {{ cardText }}
-      </mat-card-content>
-      <mat-card-footer>Das ist der Footer Bereich
-        <mat-card-actions>
-          <button mat-button aria-label="Like">LIKE</button>
-        </mat-card-actions>
-      </mat-card-footer>
-    </mat-card>
-  </div>
+    <div
+        class="card-section"
+        id="text-display"
+        aria-live="polite"
+        aria-atomic="true"
+    >
+        <mat-card>
+            <mat-card-header>Das ist der Header Bereich</mat-card-header>
+            <mat-card-title>Eingetragener Text</mat-card-title>
+            <mat-card-content>
+                {{ cardText }}
+            </mat-card-content>
+            <mat-card-footer
+                >Das ist der Footer Bereich
+                <mat-card-actions>
+                    <button mat-button aria-label="Like">LIKE</button>
+                </mat-card-actions>
+            </mat-card-footer>
+        </mat-card>
+    </div>
 </div>

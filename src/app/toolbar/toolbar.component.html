@@ -5,8 +5,15 @@
     >
         <span>Empirische Untersuchung zur Material Library</span>
         <span class="spacer"></span>
-        <button mat-button aria-label="Startseite">Home</button>
-        <button mat-button aria-label="Tabellenansicht">Table</button>
-        <button mat-button aria-label="Listenansicht">Liste</button>
+        <button mat-button aria-label="Startseite" routerLink="/">Home</button>
+        <button mat-button aria-label="Tabellenansicht" routerLink="/table">
+            Table
+        </button>
+        <button mat-button aria-label="Listenansicht" routerLink="/liste">
+            Liste
+        </button>
+        <button mat-button aria-label="Expansion" routerLink="/expansion">
+            Expansion
+        </button>
     </mat-toolbar>
 </nav>
