@@ -41,16 +41,9 @@
         </mat-form-field>
 
         <!-- Dynamisches Laden von Komponenten basierend auf der Auswahl -->
-        <ng-container *ngIf="selectedOption === 'tabliste'" class="container">
-            <app-tabliste></app-tabliste>
-        </ng-container>
-
+        
         <ng-container *ngIf="selectedOption === 'tablefeld'" class="container">
             <app-tablefeld></app-tablefeld>
-        </ng-container>
-
-        <ng-container *ngIf="selectedOption === 'stepper'" class="container">
-            <app-stepper></app-stepper>
         </ng-container>
     </section>
 </main>
