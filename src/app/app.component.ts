@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
-import { SelectfieldComponent } from "./selectfield/selectfield.component";
+import { TextfeldComponent } from "./textfeld/textfeld.component";
 import { MenupunktComponent } from "./menupunkt/menupunkt.component";
 import { SeitenleisteComponent } from "./seitenleiste/seitenleiste.component";
 
@@ -9,9 +9,9 @@ import { SeitenleisteComponent } from "./seitenleiste/seitenleiste.component";
   standalone: true,
   imports: [
     RouterOutlet,
-    SelectfieldComponent,
     MenupunktComponent,
     SeitenleisteComponent,
+    TextfeldComponent,
   ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.scss",
