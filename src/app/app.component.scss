@@ -46,3 +46,37 @@ h1 {
     align-items: center;
     justify-content: space-between;
 }
+
+/* Stellt sicher, dass der MenupunktComponent oben angezeigt wird */
+div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* Die main.title sollte nach dem Menü erscheinen */
+main.title {
+    margin-top: 20px; /* Fügt bei Bedarf Abstand zwischen Menü und Hauptinhalt hinzu */
+    display: flex;
+    flex-direction: column;
+}
+
+.layout {
+    display: flex;
+    align-items: flex-start; /* Stellt sicher, dass die Elemente oben ausgerichtet sind */
+}
+
+aside {
+    flex: 0 0 250px; /* Legt die Breite der Seitenleiste fest, passen Sie diesen Wert nach Bedarf an */
+    margin-right: 20px; /* Fügt etwas Abstand zwischen der Seitenleiste und dem Hauptinhalt hinzu */
+}
+
+.content {
+    flex: 1; /* Der Hauptinhalt nimmt den verbleibenden Platz ein */
+}
+
+.menupunkt-container {
+    width: 100%;
+    display: block; /* Stellt sicher, dass der Container sich über die gesamte Breite erstreckt */
+    margin-bottom: 20px; /* Optional: Abstand unter dem Menüpunkt, falls gewünscht */
+}
