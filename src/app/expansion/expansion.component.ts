@@ -7,11 +7,12 @@ import {
   transition,
   animate,
 } from "@angular/animations";
+import { MenupunktComponent } from "../menupunkt/menupunkt.component";
 
 @Component({
   selector: "app-expansion",
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MenupunktComponent],
   templateUrl: "./expansion.component.html",
   styleUrls: ["./expansion.component.scss"],
   animations: [
