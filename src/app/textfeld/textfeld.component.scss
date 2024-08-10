@@ -17,3 +17,10 @@ div[role="group"] + div[role="group"] {
     margin-top: 10px;
     padding-top: 10px;
 }
+
+.dialog {
+    display: flex;
+    justify-content: center; /* Horizontale Zentrierung */
+    align-items: center; /* Vertikale Zentrierung */
+    height: 100px; /* Höhe des Elternelements auf die volle Ansichtshöhe setzen */
+}

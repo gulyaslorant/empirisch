@@ -3,6 +3,7 @@
         <table
             mat-table
             [dataSource]="dataSource"
+            matSort
             class="mat-elevation-z8"
             role="table"
             aria-label="Periodic Elements Table"
@@ -12,6 +13,8 @@
                 <th
                     mat-header-cell
                     *matHeaderCellDef
+                    mat-sort-header
+                    aria-sort="none"
                     scope="col"
                     id="position-header"
                 >
@@ -32,6 +35,8 @@
                 <th
                     mat-header-cell
                     *matHeaderCellDef
+                    mat-sort-header
+                    aria-sort="none"
                     scope="col"
                     id="name-header"
                 >
@@ -52,6 +57,8 @@
                 <th
                     mat-header-cell
                     *matHeaderCellDef
+                    mat-sort-header
+                    aria-sort="none"
                     scope="col"
                     id="weight-header"
                 >
@@ -72,6 +79,8 @@
                 <th
                     mat-header-cell
                     *matHeaderCellDef
+                    mat-sort-header
+                    aria-sort="none"
                     scope="col"
                     id="symbol-header"
                 >

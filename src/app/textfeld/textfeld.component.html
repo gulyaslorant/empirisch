@@ -1,29 +1,38 @@
+<!-- textfeld.component.html -->
 <h2 id="hauptstaedte-osterreich">Landeshauptstädte von Österreich</h2>
-<dl aria-labelledby="hauptstaedte-osterreich">
-    <dt id="burgenland-group">Burgenland</dt>
-    <dd>Eisenstadt</dd>
 
-    <dt id="kaernten-group">Kärnten</dt>
-    <dd>Klagenfurt</dd>
+<div *ngIf="pagedItems.length; else noItems">
+    <mat-list role="list" aria-labelledby="hauptstaedte-osterreich">
+        <ng-container *ngFor="let item of pagedItems">
+            <mat-list-item role="listitem">
+                <div matLine>{{ item.region }}</div>
+                <div matLine class="mat-subheading">{{ item.capital }}</div>
+            </mat-list-item>
+            <mat-divider></mat-divider>
+        </ng-container>
+    </mat-list>
+</div>
 
-    <dt id="niederoesterreich-group">Niederösterreich</dt>
-    <dd>St. Pölten</dd>
+<ng-template #noItems>
+    <p>Keine Einträge vorhanden.</p>
+</ng-template>
 
-    <dt id="oberoesterreich-group">Oberösterreich</dt>
-    <dd>Linz</dd>
+<mat-paginator
+    [length]="items.length"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 20]"
+    aria-label="Liste der Landeshauptstädte Paginator"
+    (page)="onPageChange($event)"
+>
+</mat-paginator>
 
-    <dt id="salzburg-group">Salzburg</dt>
-    <dd>Salzburg</dd>
-
-    <dt id="steiermark-group">Steiermark</dt>
-    <dd>Graz</dd>
-
-    <dt id="tirol-group">Tirol</dt>
-    <dd>Innsbruck</dd>
-
-    <dt id="vorarlberg-group">Vorarlberg</dt>
-    <dd>Bregenz</dd>
-
-    <dt id="wien-group">Wien</dt>
-    <dd>Wien</dd>
-</dl>
+<!-- Button zum Öffnen des Dialogs -->
+<div class="dialog">
+    <button
+        mat-raised-button
+        (click)="openDialog()"
+        aria-label="Städte besucht Dialog öffnen"
+    >
+        Haben sie schon alle Städte besucht?
+    </button>
+</div>

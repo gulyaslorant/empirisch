@@ -1,20 +1,55 @@
+/* Grundlegendes Styling für die Tabelle */
 table {
     width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+        padding: 8px 16px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f5f5f5; /* Hintergrundfarbe der Tabellenüberschrift */
+        font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f9f9f9; /* Hintergrundfarbe für ungerade Zeilen */
+    }
+
+    tr:hover {
+        background-color: #ececec; /* Hintergrundfarbe beim Überfahren mit der Maus */
+    }
+
+    /* Randlinien für die Tabelle */
+    th,
+    td {
+        border-bottom: 1px solid #ddd;
+    }
 }
 
-.mat-elevation-z8 {
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.multidaten {
+/* Styling für die Sortierpfeile */
+.mat-sort-header-container {
     display: flex;
-    width: 100%;
-    justify-items: center;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.box {
-    flex: 1; /* Alle Boxen nehmen den gleichen Platz ein */
-    padding: 10px;
-    border: 1px solid black;
-    margin: 5px;
+/* Standardfarbe der Sortierpfeile */
+.mat-sort-header-arrow {
+    opacity: 0.6;
+    margin-left: 8px;
+}
+
+/* Aktive Sortierpfeile */
+.mat-sort-header-sorted .mat-sort-header-arrow {
+    opacity: 1;
+    color: #1976d2; /* Farbe der aktiven Sortierpfeile */
+}
+
+/* Optional: Hover-Effekt für Spaltenüberschriften */
+th.mat-sort-header:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
 }
