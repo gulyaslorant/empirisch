@@ -1,26 +1,29 @@
-import { Component } from "@angular/core";
-import { MatToolbarModule } from "@angular/material/toolbar";
-import { MatButtonModule } from "@angular/material/button";
+import { Component } from '@angular/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatBadgeModule } from '@angular/material/badge';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 import { SelectfieldComponent } from '../selectfield/selectfield.component';
-import { CommonModule } from "@angular/common"; // Wichtig für *ngIf und andere Common Features
 
 @Component({
   selector: 'app-toolbar',
   standalone: true,
   imports: [
+    CommonModule,
     MatToolbarModule,
     MatButtonModule,
-    CommonModule,
+    MatIconModule,
+    MatBadgeModule,
     SelectfieldComponent,
   ],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  currentView: string = 'home'; // Standardansicht auf 'home' setzen
+  currentView = 'home';
 
-  // Methode zum Setzen der aktuellen Ansicht
-  setView(view: string): void {
+  setView(view: string) {
     this.currentView = view;
   }
 }

@@ -5,9 +5,19 @@
     >
         <span>Empirische Untersuchung zur Material Library</span>
         <span class="spacer"></span>
-        <button mat-button aria-label="Startseite" (click)="setView('home')">
-            Home
+
+        <!-- Home Button mit Icon und Badge -->
+        <button
+            mat-icon-button
+            aria-label="Startseite (5 neue Benachrichtigungen)"
+            (click)="setView('home')"
+            matBadge="5"
+            matBadgeOverlap="false"
+        >
+            <mat-icon>home</mat-icon>
         </button>
+
+        <!-- Expansion Button -->
         <button
             mat-button
             aria-label="Expansion"
