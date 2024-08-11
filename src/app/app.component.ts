@@ -20,6 +20,9 @@ export class AppComponent {
   ngOnInit() {
     // Laden Sie die Toolbar nur, wenn sie benötigt wird
     this.loadToolbar = this.lazyLoadToolbar();
+
+    // Snackbar immer laden
+    this.loadSnackbarComponent();
   }
 
   private lazyLoadToolbar(): Promise<Type<any>> {
