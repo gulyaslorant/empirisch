@@ -23,6 +23,9 @@ export class ToolbarComponent {
   componentToLoad: any = null;
 
   constructor() {
+    // Preload aller benötigten Module
+    this.preloadModules();
+
     // Standardmäßig "Home" laden
     this.setView(this.currentView);
   }
@@ -30,7 +33,7 @@ export class ToolbarComponent {
   async setView(view: string) {
     this.currentView = view;
 
-    // Lazy Loading der Komponenten basierend auf der Auswahl
+    // Laden der Komponenten basierend auf der Auswahl
     if (view === 'home') {
       const { SelectfieldComponent } = await import(
         '../selectfield/selectfield.component'
@@ -42,5 +45,11 @@ export class ToolbarComponent {
       );
       this.componentToLoad = ExpansionComponent;
     }
+  }
+
+  async preloadModules() {
+    // Lade alle Module vorab
+    await import('../selectfield/selectfield.component');
+    await import('../expansion/expansion.component');
   }
 }
