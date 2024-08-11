@@ -4,7 +4,6 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
-import { SelectfieldComponent } from '../selectfield/selectfield.component';
 
 @Component({
   selector: 'app-toolbar',
@@ -15,15 +14,28 @@ import { SelectfieldComponent } from '../selectfield/selectfield.component';
     MatButtonModule,
     MatIconModule,
     MatBadgeModule,
-    SelectfieldComponent,
   ],
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  currentView = 'home';
+  currentView: string = 'home';
+  componentToLoad: any = null;
 
-  setView(view: string) {
+  async setView(view: string) {
     this.currentView = view;
+
+    // Lazy Loading der Komponenten basierend auf der Auswahl
+    if (view === 'home') {
+      const { SelectfieldComponent } = await import(
+        '../selectfield/selectfield.component'
+      );
+      this.componentToLoad = SelectfieldComponent;
+    } else if (view === 'expansion') {
+      const { ExpansionComponent } = await import(
+        '../expansion/expansion.component'
+      );
+      this.componentToLoad = ExpansionComponent;
+    }
   }
 }

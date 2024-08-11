@@ -28,8 +28,7 @@
     </mat-toolbar>
 </nav>
 
-<!-- Container für Home-Komponente -->
-<div *ngIf="currentView === 'home'">
-    <!-- Fügen Sie hier die Home-Komponente direkt ein -->
-    <app-selectfield *ngIf="currentView === 'home'"></app-selectfield>
-</div>
+<!-- Dynamische Anzeige der geladenen Komponente -->
+<ng-container *ngIf="currentView">
+  <ng-container *ngComponentOutlet="componentToLoad"></ng-container>
+</ng-container>

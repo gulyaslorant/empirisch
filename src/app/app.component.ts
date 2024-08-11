@@ -32,6 +32,9 @@ export class AppComponent {
   loadCheckbx: Promise<Type<any>> = import('./checkbx/checkbx.component').then(
     (m) => m.CheckboxComponent
   );
+  loadTabliste: Promise<Type<any>> = import(
+    './tabliste/tabliste.component'
+  ).then((m) => m.TablisteComponent);
 
   ngOnInit() {}
 }
