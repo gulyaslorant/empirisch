@@ -19,11 +19,11 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./toolbar.component.scss'],
 })
 export class ToolbarComponent {
-  currentView: string = 'home';
+  currentView: string = 'expansion'; // Setze die Standardansicht auf "expansion"
   componentToLoad: any = null;
 
   constructor() {
-    // Standardmäßig "Home" laden
+    // Lade die Standardansicht (in diesem Fall "Expansion")
     this.setView(this.currentView);
   }
 
