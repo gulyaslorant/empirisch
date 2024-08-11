@@ -22,6 +22,11 @@ export class ToolbarComponent {
   currentView: string = 'home';
   componentToLoad: any = null;
 
+  constructor() {
+    // Standardmäßig "Home" laden
+    this.setView(this.currentView);
+  }
+
   async setView(view: string) {
     this.currentView = view;
 
