@@ -1,13 +1,14 @@
 <div class="menupunkt-container">
-    <ng-container *ngIf="loadToolbar | async as ToolbarComponent">
-        <ng-container *ngComponentOutlet="ToolbarComponent"></ng-container>
-    </ng-container>
+  <ng-container *ngIf="loadToolbar | async as ToolbarComponent">
+    <ng-container *ngComponentOutlet="ToolbarComponent"></ng-container>
+  </ng-container>
 </div>
 
 <router-outlet></router-outlet>
 
 <div class="Infofeld">
-    <ng-container *ngIf="loadSnackbar | async as SnackbarComponent">
-        <ng-container *ngComponentOutlet="SnackbarComponent"></ng-container>
-    </ng-container>
+  <ng-container *ngIf="loadSnackbar | async as SnackbarComponent">
+    <ng-container *ngComponentOutlet="SnackbarComponent"></ng-container>
+  </ng-container>
 </div>
+
